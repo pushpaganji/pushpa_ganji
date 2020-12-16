@@ -7,15 +7,20 @@ import org.openqa.selenium.support.PageFactory;
 
 public class RanfordHome {
 	
-	WebDriver driver;
-	public String url="http://122.175.8.158/Ranford2/home.aspx";
-	public String title="MINDQ RANFORD BANK";
+	 WebDriver driver;
+	private String url="http://122.175.8.158//Ranford2//home.aspx";
+	private String title="MINDQ RANFORD BANK";
 	public RanfordHome(WebDriver driver)
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 		driver.get(url);
 	}
+	
+	//Input Data
+		public String Username="sriram123";
+		public String password="sriram123";
+		
    
 	@FindBy(xpath="//a[@href='http://ravinderbasani.com']")
 	public WebElement Home_btn;
@@ -36,10 +41,10 @@ public class RanfordHome {
 	public WebElement Branch_Name;
 	
 	@FindBy(xpath = "//input[@type='text']")
-	public WebElement Username;
+	public WebElement Admin_Banker_username;
 	
-	@FindBy(xpath = "//input[@id='login']")
-	public WebElement password;
+	@FindBy(xpath = "//input[@id='txtPword']")	
+	public WebElement Admin_Banker_password;
 	
 	@FindBy(xpath = "//input[@id='login']")
 	public WebElement Login;
@@ -61,6 +66,13 @@ public class RanfordHome {
 	
 	@FindBy(xpath = "//a[@href='sitemap.html']")
 	public WebElement Site_Map;
+	
+	public boolean Is_Ranford_Homepage_Opened()
+	{
+		String Runtime_title=driver.getTitle();
+		boolean flag= Runtime_title.contains(title);
+		return flag;
+	}
 
     public void Click_On_Home_btn()
     {
@@ -82,26 +94,21 @@ public class RanfordHome {
     {
     	Branch_Name.click();
     }
-    public void Type_Username(String username)
+    public void Type_Admin_Banker_username(String username)
     {
-    	Username.clear();
-    	Username.sendKeys("admin");
+    	Admin_Banker_username.clear();
+    	Admin_Banker_username.sendKeys(username);
      }
-    public void Type_password(String pwd)
+    public void Type_Admin_Banker_password(String password)
     {
-    	password.clear();
-    	password.sendKeys("M1ndq");
+    	Admin_Banker_password.clear();
+    	Admin_Banker_password.sendKeys(password);
     }
     public void Click_On_Login()
     {
     	Login.click();
     }
-	public boolean Is_Ranford_Homepage_Opened()
-	{
-		String Runtime_title=driver.getTitle();
-		boolean flag= Runtime_title.contains(title);
-		return flag;
-	}
+	
     public void Click_On_Customer_Service()
     {
     	Customer_Service.click();
@@ -128,11 +135,31 @@ public class RanfordHome {
     }
     public void Enter_Admin_Banker_Login(String username,String password)
 	{
-		Type_Username(username);
-		Type_password(password);
+    	Type_Admin_Banker_username(username);
+		Type_Admin_Banker_password(password);
 		Click_On_Login();
 		
 	}
+    public boolean is_AlertPresent()
+	{
+		try {
+			driver.switchTo().alert();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	
+	public void close_Alert()
+	{
+		if(is_AlertPresent())
+			driver.switchTo().alert().accept();
+		else
+			System.out.println("Alert not presented");
+	}
+	
+	
 }
 	
 	

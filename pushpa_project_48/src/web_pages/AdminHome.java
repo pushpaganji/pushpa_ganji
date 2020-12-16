@@ -24,16 +24,16 @@ public class AdminHome {
 	@FindBy(xpath="//a[href='home.aspx']")
 	public WebElement Logout;
 	
-	@FindBy(xpath="//a[href='admin_banker_master.aspx']")
+	@FindBy(xpath = "//img[@src='images/Branches_but.jpg']")
 	public WebElement Branches_info;
 	
-	@FindBy(xpath="//a[href='Admin_Roles_details.aspx']")
+	@FindBy(xpath = "//img[@src='images/Roles_but.jpg']")
 	public WebElement Roles_info;
 	
-	@FindBy(xpath="//a[href='userdetails.aspx']")
+	@FindBy(xpath = "//img[@src='images/Users_but.jpg']")
 	public WebElement Users_info;
 	
-	@FindBy(xpath="//a[href='Admin_Emp_details.aspx']")
+	@FindBy(xpath = "//img[contains(@src,'btn.jpg')]")
 	public WebElement Employee_info;
 	
 	public void Click_On_Home_btn()

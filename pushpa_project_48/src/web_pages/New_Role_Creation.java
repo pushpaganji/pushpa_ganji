@@ -10,13 +10,17 @@ import org.openqa.selenium.support.ui.Select;
 public class New_Role_Creation {
 	
 	WebDriver driver;
+	private String url="http://122.175.8.158/Ranford2/home.aspx";
+	private String title="BRANCHES PAGE";
 	public New_Role_Creation(WebDriver driver)
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 		
 	}
-	
+	@FindBy(xpath = "//input[@id='btnRoles']")
+	public WebElement New_Role;
+			
 	@FindBy(xpath = "//input[@id='txtRname']")
 	public WebElement Enter_Role_Name;
 	
@@ -35,6 +39,18 @@ public class New_Role_Creation {
 	@FindBy(xpath = "//input[@id='Btn_cancel']")
 	public WebElement Cancel_btn;
 	
+	public void Click_On_New_Role()
+	{
+		New_Role.click();
+	}
+			
+	public boolean Is_New_Role_Page_Displayed()
+	{
+
+		String Runtime_title=driver.getTitle();
+		boolean flag= Runtime_title.contains(title);
+		return flag;
+	}
 	public void Type_Enter_Role_Name(String role_name)
 	{
 		Enter_Role_Name.clear();
@@ -62,5 +78,25 @@ public class New_Role_Creation {
 	{
 		Cancel_btn.click();
 	}
+	 public boolean is_AlertPresent()
+		{
+			try {
+				driver.switchTo().alert();
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
+		}
+		
+		
+		public void close_Alert()
+		{
+			if(is_AlertPresent())
+				driver.switchTo().alert().accept();
+			else
+				System.out.println("Alert not presented");
+		}
+		
+		
 
 }

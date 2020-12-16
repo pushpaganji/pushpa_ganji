@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.Select;
 public class Users {
 	
 	WebDriver driver;
+	private String url="http://122.175.8.158/Ranford2/home.aspx";
+	private String title="UserDetails";
 	public Users(WebDriver driver)
 	{
 		this.driver=driver;
@@ -31,11 +33,18 @@ public class Users {
 	@FindBy(xpath = "//input[@id='btn_clear']")
 	public WebElement Clear_btn;
 	
-	@FindBy(xpath = "(//td[contains(.,'Edit')])[2]")
+	@FindBy(xpath = "(//img[@align='center'])[1]")
 	public WebElement Edit;
 	
-	@FindBy(xpath = "(//td[contains(.,'Delete')])[2]")
+	@FindBy(xpath = "(//img[@border='0'])[9]")
 	public WebElement Delete;
+	public boolean Is_User_UpdationPage_Displayed()
+	{
+
+		String Runtime_title=driver.getTitle();
+		boolean flag= Runtime_title.contains(title);
+		return flag;
+	}
 	
 	public void Select_Select_Branch_Name(String branch_name)
 	{
@@ -53,8 +62,37 @@ public class Users {
 	{
 		Clear_btn.click();
 	}
-	
+	public void Click_On_Edit_btn()
+	{
+		Edit.click();
+	}
+	public void Click_On_Delete_btn()
+	{
+		Delete.click();
+	}
+	 public boolean is_AlertPresent()
+		{
+			try {
+				driver.switchTo().alert();
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
+		}
+		
+		
+		public void close_Alert()
+		{
+			if(is_AlertPresent())
+				driver.switchTo().alert().accept();
+			else
+				System.out.println("Alert not presented");
+		}
+		
+		
+
 }
+
 	
 	
 	
