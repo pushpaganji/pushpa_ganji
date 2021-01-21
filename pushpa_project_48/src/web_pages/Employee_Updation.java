@@ -39,7 +39,7 @@ public class Employee_Updation {
 	public void Type_Employee_Name(String emp_name)
 	{
 		Employee_Name.clear();
-		Employee_Name.sendKeys("abcdefghi");
+		Employee_Name.sendKeys("aswriad");
 	}
    public boolean Is_Employee_Updation_Page_Displayed()
    {
@@ -55,11 +55,11 @@ public class Employee_Updation {
 	}
 	public void Select_Role_Name(String rolename)
 	{
-		new Select(driver.findElement(By.id("lstrolesU"))).selectByVisibleText("Chandra");
+		new Select(driver.findElement(By.id("lstrolesU"))).selectByVisibleText("pandu");
 	}
 	public void Select_Branch(String branchname)
 	{
-		new Select(driver.findElement(By.id("lstBidU"))).selectByVisibleText("HayathNagar");
+		new Select(driver.findElement(By.id("lstBidU"))).selectByVisibleText("awesome");
 	}
 	public void Click_On_Update_btn()
 	{

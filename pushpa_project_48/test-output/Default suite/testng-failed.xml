@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="web_tests.Run_DD_Admin_Tests">
+      <class name="testng_Framework.TestSuite.Run_DD_Admin_Tests">
         <methods>
-          <include name="afterMethod"/>
           <include name="afterClass"/>
           <include name="beforeClass"/>
           <include name="Create_A_Branch"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- web_tests.Run_DD_Admin_Tests -->
+      </class> <!-- testng_Framework.TestSuite.Run_DD_Admin_Tests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

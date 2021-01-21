@@ -40,7 +40,99 @@ public class Test_Updations {
 	public String Role_Desc="desc";
 	public String Role_Type="A";
 	
-	@Test(priority=0)
+
+
+
+
+	@Test
+	public void Click_On_EmployeeUpdate_Button() throws InterruptedException
+	{
+	RanfordHome RHP=new RanfordHome(driver);
+	Assert.assertTrue(RHP.Is_Ranford_Homepage_Opened());
+	RHP.Type_Admin_Banker_username("Admin");
+	RHP.Type_Admin_Banker_password("M1ndq");
+	Thread.sleep(2000);
+	RHP.Click_On_Login();     
+	Thread.sleep(3000);
+	AdminHome AH= new AdminHome(driver);
+	    AH.Click_On_Employee_info();
+	    Employees emp= new Employees(driver);
+	    emp.Click_On_Edit_btn();
+	    emp.close_Alert();
+	    Employee_Updation EU=new Employee_Updation(driver);
+	    EU.Type_Employee_Name("dfdf");
+	    Thread.sleep(2000);
+	    EU.Select_Role_Name("pandu");
+	    Thread.sleep(2000);
+	    EU.Select_Branch("awesome");
+	    Thread.sleep(2000);
+	    EU.Click_On_Update_btn();
+	    EU.close_Alert();
+	    EU.close_Alert();
+	}
+	@Test
+	public void Click_On_RolesUpdate_Button() throws InterruptedException
+	{
+	RanfordHome RHP=new RanfordHome(driver);
+	Assert.assertTrue(RHP.Is_Ranford_Homepage_Opened());
+	RHP.Type_Admin_Banker_username("Admin");
+	RHP.Type_Admin_Banker_password("M1ndq");
+	Thread.sleep(2000);
+	RHP.Click_On_Login();     
+	Thread.sleep(3000);
+	AdminHome AH= new AdminHome(driver);
+		AH.Click_On_Roles_info();
+		Roles roles= new Roles(driver);
+		roles.Click_On_Edit_btn();
+		Roles_Updation RU= new Roles_Updation(driver);
+		RU.Type_Enter_Role_Name("bjhgh");
+		RU.Type_Enter_Role_Description("hukj");
+		RU.Select_Role_Type("C");
+		RU.Click_On_Update_btn();
+		 Thread.sleep(2000);
+		  Assert.assertTrue(RU.is_AlertPresent());
+	     RU.close_Alert();
+	     RU.close_Alert();
+		 
+	
+	}
+
+@Test
+	public void Click_On_UsersDelete_Button() throws InterruptedException
+	{
+	RanfordHome RHP=new RanfordHome(driver);
+	Assert.assertTrue(RHP.Is_Ranford_Homepage_Opened());
+	RHP.Type_Admin_Banker_username("Admin");
+	RHP.Type_Admin_Banker_password("M1ndq");
+	Thread.sleep(2000);
+	RHP.Click_On_Login();     
+	Thread.sleep(3000);
+	AdminHome AH= new AdminHome(driver);
+		AH.Click_On_Users_info();
+		
+	
+	}
+@Test
+	public void Click_On_BranchDelete_Button() throws InterruptedException
+	{
+		RanfordHome RHP=new RanfordHome(driver);
+		Assert.assertTrue(RHP.Is_Ranford_Homepage_Opened());
+		RHP.Type_Admin_Banker_username("Admin");
+		RHP.Type_Admin_Banker_password("M1ndq");
+		Thread.sleep(2000);
+		RHP.Click_On_Login();     
+		Thread.sleep(3000);
+		AdminHome AH= new AdminHome(driver);
+		AH.Click_On_Branches_info();
+		Branches branches= new Branches(driver);
+		branches.Click_On_Delete();
+		Assert.assertTrue(branches.is_AlertPresent());
+		 branches.close_Alert();
+		 branches.close_Alert();
+	      Thread.sleep(3000);
+	}
+
+@Test(priority=0)
 	public void Click_On_BranchEdit_Button() throws InterruptedException
 	{
 		RanfordHome RHP=new RanfordHome(driver);
@@ -68,51 +160,8 @@ public class Test_Updations {
 	      Thread.sleep(5000);
 		
 }
-@Test(priority=1)
-	public void Click_On_BranchDelete_Button() throws InterruptedException
-	{
-		RanfordHome RHP=new RanfordHome(driver);
-		Assert.assertTrue(RHP.Is_Ranford_Homepage_Opened());
-		RHP.Type_Admin_Banker_username("Admin");
-		RHP.Type_Admin_Banker_password("M1ndq");
-		Thread.sleep(2000);
-		RHP.Click_On_Login();     
-		Thread.sleep(3000);
-		AdminHome AH= new AdminHome(driver);
-		AH.Click_On_Branches_info();
-		Branches branches= new Branches(driver);
-		branches.Click_On_Delete();
-		Assert.assertTrue(branches.is_AlertPresent());
-		 branches.close_Alert();
-		 branches.close_Alert();
-	      Thread.sleep(3000);
-	}
-@Test(priority=2)
-	public void Click_On_RolesUpdate_Button() throws InterruptedException
-	{
-		RanfordHome RHP=new RanfordHome(driver);
-		Assert.assertTrue(RHP.Is_Ranford_Homepage_Opened());
-		RHP.Type_Admin_Banker_username("Admin");
-		RHP.Type_Admin_Banker_password("M1ndq");
-		Thread.sleep(2000);
-		RHP.Click_On_Login();     
-		Thread.sleep(3000);
-		AdminHome AH= new AdminHome(driver);
-		AH.Click_On_Roles_info();
-		Roles roles= new Roles(driver);
-		roles.Click_On_Edit_btn();
-		Roles_Updation RU= new Roles_Updation(driver);
-		RU.Type_Enter_Role_Name("virinchi");
-		RU.Type_Enter_Role_Description("Mumbai");
-		RU.Select_Role_Type("C");
-		RU.Click_On_Update_btn();
-		 Thread.sleep(2000);
-	     Assert.assertTrue(RU.is_AlertPresent());
-	     RU.close_Alert();
-		
-	
-	}
-@Test(priority=3)
+
+@Test
 	public void Click_On_RolesDelete_Button() throws InterruptedException
 	{
 		RanfordHome RHP=new RanfordHome(driver);
@@ -126,102 +175,21 @@ public class Test_Updations {
 		AH.Click_On_Roles_info();
 		Roles roles= new Roles(driver);
         roles.Click_On_Delete_btn();
+        roles.close_Alert();
         Assert.assertTrue(roles.is_AlertPresent());
         roles.close_Alert();
         roles.close_Alert();
 	}
 
-@Test(priority=4)
-	public void Click_On_UsersUpdate_Button() throws InterruptedException
-	{
-		RanfordHome RHP=new RanfordHome(driver);
-		Assert.assertTrue(RHP.Is_Ranford_Homepage_Opened());
-		RHP.Type_Admin_Banker_username("Admin");
-		RHP.Type_Admin_Banker_password("M1ndq");
-		Thread.sleep(2000);
-		RHP.Click_On_Login();     
-		Thread.sleep(3000);
-		AdminHome AH= new AdminHome(driver);
-		AH.Click_On_Users_info();
-		Users users= new Users(driver);
-		users.Click_On_Edit_btn();
-		User_Updation UU= new User_Updation(driver);
-		UU.Type_Enter_UserName("jklmn");
-		UU.Type_Enter_Password("admin");
-		UU.Type_Enter_Transaction_Password("shekarVarma");
-		UU.Click_On_Update_btn();
-		Assert.assertTrue(UU.is_AlertPresent());
-		UU.close_Alert();
-	
-	}
 
-@Test(priority=5)
-	public void Click_On_UsersDelete_Button() throws InterruptedException
-	{
-		RanfordHome RHP=new RanfordHome(driver);
-		Assert.assertTrue(RHP.Is_Ranford_Homepage_Opened());
-		RHP.Type_Admin_Banker_username("Admin");
-		RHP.Type_Admin_Banker_password("M1ndq");
-		Thread.sleep(2000);
-		RHP.Click_On_Login();     
-		Thread.sleep(3000);
-		AdminHome AH= new AdminHome(driver);
-		AH.Click_On_Users_info();
-		Users users= new Users(driver);
-        users.Click_On_Delete_btn();
-        Assert.assertTrue(users.is_AlertPresent());
-        users.close_Alert();
-        users.close_Alert();
-	
-	}
 
-@Test(priority=6)
-	public void Click_On_EmployeeUpdate_Button() throws InterruptedException
-	{
-		RanfordHome RHP=new RanfordHome(driver);
-		Assert.assertTrue(RHP.Is_Ranford_Homepage_Opened());
-		RHP.Type_Admin_Banker_username("Admin");
-		RHP.Type_Admin_Banker_password("M1ndq");
-		Thread.sleep(2000);
-		RHP.Click_On_Login();     
-		Thread.sleep(3000);
-		AdminHome AH= new AdminHome(driver);
-	    AH.Click_On_Employee_info();
-	    Employees emp= new Employees(driver);
-	    emp.Click_On_Edit_btn();
-	    Employee_Updation EU=new Employee_Updation(driver);
-	    EU.Type_Employee_Name("subhashini");
-	    Thread.sleep(2000);
-	    EU.Select_Role_Name("Chandra");
-	    Thread.sleep(2000);
-	    EU.Select_Branch("HayathNagar");
-	    Thread.sleep(2000);
-	    EU.Click_On_Update_btn();
-	    Assert.assertTrue(EU.is_AlertPresent());
-	    EU.close_Alert();
-	}
+
+
+
+
+
 	
-	
-	@Test(priority=7)
-	public void Click_On_EmployeeDelete_Button() throws InterruptedException
-	{
-		RanfordHome RHP=new RanfordHome(driver);
-		Assert.assertTrue(RHP.Is_Ranford_Homepage_Opened());
-		RHP.Type_Admin_Banker_username("Admin");
-		RHP.Type_Admin_Banker_password("M1ndq");
-		Thread.sleep(2000);
-		RHP.Click_On_Login();     
-		Thread.sleep(3000);
-		AdminHome AH= new AdminHome(driver);
-	    AH.Click_On_Employee_info();
-	    Employees emp= new Employees(driver);
-	    emp.Click_On_Delete_btn();
-	    Assert.assertTrue(emp.is_AlertPresent());
-	    emp.close_Alert();
-	    Thread.sleep(3000);
-	    emp.close_Alert();
-	    emp.close_Alert();
-	}
+
 	@AfterMethod//Invoke every @Test annotation after.
 public void afterMethod(Method method) throws Exception 
 {

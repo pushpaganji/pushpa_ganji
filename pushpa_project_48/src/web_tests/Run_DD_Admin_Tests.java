@@ -25,13 +25,15 @@ public class Run_DD_Admin_Tests
 	  FileInputStream fi;
 	  Properties properties;
 	  WebDriver driver;
+	  
 	  DD_Admin_Tests AdminTest;
 	  
 	  @Test(priority=0)
-	  public void Create_A_Branch()
+	  public void Create_A_Branch() throws InterruptedException
 	  {
 		  AdminTest=new DD_Admin_Tests(driver);        
 		  AdminTest.Create_A_Branch();
+		  
 
 		  
 	  }

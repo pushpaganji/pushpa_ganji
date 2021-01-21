@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="ProjectA">
+<parameter name="Username" value="admin"></parameter>
+	<parameter name="password" value="admin"></parameter>
+	<parameter name="Branch_name" value="HayathNagar"></parameter>
+	
+	
+		<test name="TestA" verbose="2">
+				<classes>
+				<class name="testng_Framework.TestSuite.Run_DD_Admin_Tests"></class>					
+			   	<class name="testng_Framework.TestSuite.Test_Branches"></class>					
+				<class name="testng_Framework.TestSuite.Test_Branches2"></class>					
+			   	<class name="testng_Framework.TestSuite.Test_Updations"></class>					
+			   	<class name="testng_Framework.TestSuite.Run_Banker_Testcase"></class>					
+				<class name="testng_Framework.TestSuite.Run_Banker_Testcase2"></class>					
+			   	
+				</classes>
+		</test>
+</suite>

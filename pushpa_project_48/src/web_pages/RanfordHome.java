@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class RanfordHome {
 	
 	 WebDriver driver;
-	private String url="http://122.175.8.158//Ranford2//home.aspx";
+	private String url="http://122.175.8.158/Ranford2/home.aspx";
 	private String title="MINDQ RANFORD BANK";
 	public RanfordHome(WebDriver driver)
 	{
@@ -43,7 +43,7 @@ public class RanfordHome {
 	@FindBy(xpath = "//input[@type='text']")
 	public WebElement Admin_Banker_username;
 	
-	@FindBy(xpath = "//input[@id='txtPword']")	
+	@FindBy(xpath = "//input[@id='txtPword']")
 	public WebElement Admin_Banker_password;
 	
 	@FindBy(xpath = "//input[@id='login']")

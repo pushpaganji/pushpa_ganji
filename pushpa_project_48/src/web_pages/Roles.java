@@ -19,7 +19,7 @@ public class Roles {
 	@FindBy(xpath = "//input[@id='btnRoles']")
 	public WebElement New_Role;
 		
-	@FindBy(xpath = "(//img[@align='center'])[1]")
+	@FindBy(xpath = "(//img[@border='0'])[8]")
 	public WebElement Edit_btn;
 	
 	@FindBy(xpath = "(//img[contains(@src,'delete.gif')])[1]")

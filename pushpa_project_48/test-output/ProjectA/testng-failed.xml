@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [ProjectA]">
+  <parameter name="Branch_name" value="HayathNagar"/>
+  <parameter name="password" value="admin"/>
+  <parameter name="Username" value="admin"/>
+  <test thread-count="5" name="TestA(failed)">
+    <classes>
+      <class name="testng_Framework.TestSuite.Run_DD_Admin_Tests">
+        <methods>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="Create_A_Branch"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testng_Framework.TestSuite.Run_DD_Admin_Tests -->
+    </classes>
+  </test> <!-- TestA(failed) -->
+</suite> <!-- Failed suite [ProjectA] -->

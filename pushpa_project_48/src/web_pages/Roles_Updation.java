@@ -27,6 +27,9 @@ public class Roles_Updation {
 	@FindBy(xpath = "//select[contains(@id,'lstRtype')]")
 	public WebElement Role_Type;
 	
+	@FindBy(xpath = "(//img[@border='0'])[8]")
+	public WebElement Edit_btn;
+	
 	@FindBy(xpath = "//input[@id='btnupdate']")
 	public WebElement Update_btn;
 	
@@ -54,6 +57,10 @@ public class Roles_Updation {
 	public void Select_Role_Type(String role_type)
 	{
 		new Select(driver.findElement(By.id("lstRtype"))).selectByVisibleText("C");
+	}
+	public void Click_On_Edit_btn()
+	{
+		Edit_btn.click();
 	}
 	public void Click_On_Update_btn()
 	{

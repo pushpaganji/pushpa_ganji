@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="ProjectA">
+<parameter name="banker_url" value="http://122.175.8.158/Ranford2/"></parameter>
+	<parameter name="BranchName" value="HayathNagar"></parameter>
+	<parameter name="username" value="sriram123"></parameter>
+	<parameter name="password" value="sriram123"></parameter>
+	<parameter name="AccoutNumber" value="3001776101375"></parameter>
+	<parameter name="Transaction_Type" value="dd deposite(+)"></parameter>
+	<parameter name="Customer_Company_name" value="naveengolla"></parameter>
+	<parameter name="city" value="hanamkonda"></parameter>
+    <parameter name="phne_num" value="(741)023-6985"></parameter>
+	<parameter name="acc_bal" value="sriram123"></parameter>
+	<parameter name="Receipts_url" value="http://122.175.8.158/Ranford2/Banker_deposits.aspx"></parameter>
+	<parameter name="Payments_url" value="http://122.175.8.158/Ranford2/Banker_Payments.aspx"></parameter>
+	<parameter name="AccoutNumber1" value="3001776100000"></parameter>
+	<parameter name="Exp_msg" value="Give correct Account number"></parameter>
+		<test name="TestA" verbose="2">
+				<classes>
+						<class name="testng_Framework.TestSuite.Test_Branches"></class>
+						<class name="testng_Framework.TestSuite.Test_Branches2"></class>
+						<class name="testng_Framework.TestSuite.Test_Updations"></class>				
+				</classes>
+		</test>
+</suite>
